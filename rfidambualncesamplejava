@@ -1,0 +1,41 @@
+import java.util.*;
+class Ambulancedectection
+{
+public static void main(String args[]) 
+{
+	PriorityQueue<Integer> pq=new PriorityQueue<Integer>();
+	Scanner s=new Scanner(System.in);
+	System.out.println("enter the number of ambulance detected in IN-RFID Scanner");
+	int n=s.nextInt();
+	String lanerfid[]=new String[n];
+	for(int i=0;i<n;i++)
+	{
+		System.out.println("Enter the code of the ambulance based on the siren switch");
+		int icode=s.nextInt();
+		pq.add(icode);
+		System.out.println("enter the lane at which the "+icode+" was detected eg:lane1");
+		lanerfid[i]=s.nextLine();
+	} 
+	System.out.println("Acknowledgement of PriorityQueue");
+	Iterator it=pq.iterator();
+	while(it.hasNext())
+	{
+		System.out.println(it.next());
+	}
+		System.out.println("Enter the code of the ambulance that detected in PASS-RFID Scanner");
+		int pcode=s.nextInt();
+		Object[] pqa = pq.toArray();
+		Integer[] pqarr=new Integer[pqa.length];
+		for (int i:pqarr)
+		{
+			if(i==pcode)
+			pq.poll();
+			for(int j=0;j<=5;j++)
+			{
+				System.out.println("Caution light: "+i+"in"+lanerfid[j]);
+			}
+			System.out.println("Red");
+		}
+
+	}
+}
