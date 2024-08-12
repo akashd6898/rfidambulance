@@ -1,2 +1,2 @@
 # rfidambulance
- program of project regarding RFID on signal control on detection ambulance and management of detected ambulance 
+Project using RFID technology on traffic signal control on detection and management of ambulance on road. 
